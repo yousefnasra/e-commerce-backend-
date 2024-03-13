@@ -14,4 +14,7 @@ router.post("/", isAuthenticated, isAuthorized("user"), validation(orderSchema.c
 // cancel order
 router.patch("/:id", isAuthenticated, isAuthorized("user"), validation(orderSchema.cancelOrder), orderController.cancelOrder);
 
+// webhook end >>> stripe
+router.post('/webhook', express.raw({ type: 'application/json' }), orderController.orderWebhook);
+
 export default router;

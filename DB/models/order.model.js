@@ -21,7 +21,7 @@ const orderSchema = new Schema({
         name: String,
         discount: { type: Number, min: 1, max: 70 }
     },
-    status: { type: String, default: "placed", enum: ["placed", "shipped", "delivered", "canceled", "refunded"] },
+    status: { type: String, default: "placed", enum: ["placed", "shipped", "delivered", "canceled", "refunded","visa payed","failed to pay"] },
 },
     { timestamps: true, toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );
