@@ -4,7 +4,7 @@ import * as orderController from "./order.controller.js";
 import * as orderSchema from "./order.schema.js";
 import { isAuthenticated } from "../../middleware/authentication.middleware.js";
 import { isAuthorized } from "../../middleware/authorization.middleware.js";
-import { fileUpload } from "../../utils/fileUpload.js";
+import express from "express";
 
 const router = Router();
 
@@ -15,6 +15,6 @@ router.post("/", isAuthenticated, isAuthorized("user"), validation(orderSchema.c
 router.patch("/:id", isAuthenticated, isAuthorized("user"), validation(orderSchema.cancelOrder), orderController.cancelOrder);
 
 // webhook end >>> stripe
-router.post('/webhook', express.raw({ type: 'application/json' }), orderController.orderWebhook);
+router.post('/webhook', express.raw({ type: 'application/json' }), orderController.orderWebhook); //req.body >> buffer
 
 export default router;

@@ -42,7 +42,12 @@ app.use(cors()); //allow access from every where
 //&==========
 
 // parsing
-app.use(express.json());
+app.use((req, res, next) => {
+    // req.originalUrl to do not parse data in stripe webhook router
+    if (req.originalUrl === "/order/webhook")
+        return next();
+    express.json()(req, res, next);
+});
 
 // morgan
 app.use(morgan("combined"));
