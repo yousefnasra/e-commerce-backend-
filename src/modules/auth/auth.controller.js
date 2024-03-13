@@ -21,7 +21,7 @@ export const register = asyncHandler(async (req, res, next) => {
     // create user + hash password (using hash password hook)
     await User.create({ ...req.body });
     // create confirmationLink
-    const confirmationLink = `http://localhost:3000/auth/activate_account/${token}`;
+    const confirmationLink = `https://e-commerce-backend-umber.vercel.app/auth/activate_account/${token}`;
     // send email
     const messageSent = await sendEmail({
         to: email,
