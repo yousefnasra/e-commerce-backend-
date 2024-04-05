@@ -1,0 +1,1335 @@
+{
+	"info": {
+		"_postman_id": "b1b63b2b-48da-42d9-bd53-0c687e95924c",
+		"name": "e-commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28904967"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "resgister",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"Nasra\",\r\n    \"email\":\"rewannasra410@gmail.com\",\r\n    \"password\":\"A12345\",\r\n    \"confirmPassword\":\"A12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/auth/register",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"rewannasra410@gmail.com\",\r\n    \"password\":\"A12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/auth/login",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send forgetCode",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"rewannasra410@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/auth/forgetCode",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"auth",
+								"forgetCode"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"yosefnasr165201699@gmail.com\",\r\n    \"password\":\"newPassword\",\r\n    \"confirmPassword\":\"newPassword\",\r\n    \"forgetCode\":\"802054\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/auth/resetPassword",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"auth",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "create category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJld2FubmFzcmE0MTBAZ21haWwuY29tIiwiaWQiOiI2NWYwZmY4M2JhN2Y2YmQ2YmYxM2E3YjAiLCJpYXQiOjE3MTAyOTI5NTN9.soWXgFyf1GepIwM-xW9B72JpHfTBO5YCxhGgkzEe88U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "electronics",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"type": "file",
+									"src": "/C:/Users/pc/Downloads/Default-Profile-Picture-PNG-Download-Image.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/category/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update category",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlvc2VmbmFzcjE2NTIwMTZAZ21haWwuY29tIiwiaWQiOiI2NWI4NjdhMGQxYzgzNTZlZDVlNGI4ZWUiLCJpYXQiOjE3MDc1NjMyMzd9.Xmf-gXmrXAT95k2-LtC8kxNDyTzZH1ABiiktOmtGSxc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "electronics game",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"type": "file",
+									"src": "/C:/Users/pc/Downloads/wallpaperflare.com_wallpaper.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/category/65c75a9b7413ac8677aebe27",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"category",
+								"65c75a9b7413ac8677aebe27"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete category",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlvc2VmbmFzcjE2NTIwMTZAZ21haWwuY29tIiwiaWQiOiI2NWI4NjdhMGQxYzgzNTZlZDVlNGI4ZWUiLCJpYXQiOjE3MDkzODI2MTN9.8FToGhT64wgL2o95lRBYp3boNLLHwhKBoVwKiEg2wc8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/category/65c77ee5f7c4e14b905e5f8e",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"category",
+								"65c77ee5f7c4e14b905e5f8e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/category",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "subcategory",
+			"item": [
+				{
+					"name": "create subcategory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJld2FubmFzcmE0MTBAZ21haWwuY29tIiwiaWQiOiI2NWYwZmY4M2JhN2Y2YmQ2YmYxM2E3YjAiLCJpYXQiOjE3MTAyOTI5NTN9.soWXgFyf1GepIwM-xW9B72JpHfTBO5YCxhGgkzEe88U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "valorant",
+									"type": "text"
+								},
+								{
+									"key": "subcategory",
+									"type": "file",
+									"src": "/C:/Users/pc/Downloads/wallpaperflare.com_wallpaper.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/category/65f10097ba7f6bd6bf13a7ba/subcategory",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"category",
+								"65f10097ba7f6bd6bf13a7ba",
+								"subcategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update subcategory",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlvc2VmbmFzcjE2NTIwMTZAZ21haWwuY29tIiwiaWQiOiI2NWI4NjdhMGQxYzgzNTZlZDVlNGI4ZWUiLCJpYXQiOjE3MDc1NjMyMzd9.Xmf-gXmrXAT95k2-LtC8kxNDyTzZH1ABiiktOmtGSxc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "valorant game",
+									"type": "text"
+								},
+								{
+									"key": "subcategory",
+									"type": "file",
+									"src": "/C:/Users/pc/Downloads/Default-Profile-Picture-PNG-Download-Image.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/category/65c76cc8e371bb1cc3189d77/subcategory/65c776c5fc98c37aec121ea6",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"category",
+								"65c76cc8e371bb1cc3189d77",
+								"subcategory",
+								"65c776c5fc98c37aec121ea6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete subcategory",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlvc2VmbmFzcjE2NTIwMTZAZ21haWwuY29tIiwiaWQiOiI2NWI4NjdhMGQxYzgzNTZlZDVlNGI4ZWUiLCJpYXQiOjE3MDc1NjMyMzd9.Xmf-gXmrXAT95k2-LtC8kxNDyTzZH1ABiiktOmtGSxc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/category/65c76cc8e371bb1cc3189d77/subcategory/65c776c5fc98c37aec121ea6",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"category",
+								"65c76cc8e371bb1cc3189d77",
+								"subcategory",
+								"65c776c5fc98c37aec121ea6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all subcategories of certain category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/category/65c77ee5f7c4e14b905e5f8e/subcategory",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"category",
+								"65c77ee5f7c4e14b905e5f8e",
+								"subcategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all subcategories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/subcategory",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"subcategory"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "brand",
+			"item": [
+				{
+					"name": "create brand",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJld2FubmFzcmE0MTBAZ21haWwuY29tIiwiaWQiOiI2NWYwZmY4M2JhN2Y2YmQ2YmYxM2E3YjAiLCJpYXQiOjE3MTAyOTI5NTN9.soWXgFyf1GepIwM-xW9B72JpHfTBO5YCxhGgkzEe88U",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "YN",
+									"type": "text"
+								},
+								{
+									"key": "categories[0]",
+									"value": "65f10097ba7f6bd6bf13a7ba",
+									"type": "text"
+								},
+								{
+									"key": "brand",
+									"type": "file",
+									"src": "/C:/Users/pc/Downloads/wallpaperflare.com_wallpaper.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/brand/",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"brand",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update brand",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlvc2VmbmFzcjE2NTIwMTZAZ21haWwuY29tIiwiaWQiOiI2NWI4NjdhMGQxYzgzNTZlZDVlNGI4ZWUiLCJpYXQiOjE3MDg4NjIzNjV9.inPBmRnO9_N0rLXtR_bc4m8yZ4pPWgab6gfUNiRAOpM",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "ynu",
+									"type": "text"
+								},
+								{
+									"key": "brand",
+									"type": "file",
+									"src": "/C:/Users/pc/Downloads/Default-Profile-Picture-PNG-Download-Image.png",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/brand/65db35b10b55ccbeb640e876",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"brand",
+								"65db35b10b55ccbeb640e876"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete brand",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlvc2VmbmFzcjE2NTIwMTZAZ21haWwuY29tIiwiaWQiOiI2NWI4NjdhMGQxYzgzNTZlZDVlNGI4ZWUiLCJpYXQiOjE3MDg4NjIzNjV9.inPBmRnO9_N0rLXtR_bc4m8yZ4pPWgab6gfUNiRAOpM",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/brand/65db35b10b55ccbeb640e876",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"brand",
+								"65db35b10b55ccbeb640e876"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all brands",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/brand/",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"brand",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "coupon",
+			"item": [
+				{
+					"name": "generate coupon",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJld2FubmFzcmE0MTBAZ21haWwuY29tIiwiaWQiOiI2NWYwZmY4M2JhN2Y2YmQ2YmYxM2E3YjAiLCJpYXQiOjE3MTAyOTI5NTN9.soWXgFyf1GepIwM-xW9B72JpHfTBO5YCxhGgkzEe88U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"discount\":40,\r\n    \"expiredAt\":\"12-30-2024\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/coupon/",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"coupon",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update coupon",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlvc2VmbmFzcjE2NTIwMTZAZ21haWwuY29tIiwiaWQiOiI2NWI4NjdhMGQxYzgzNTZlZDVlNGI4ZWUiLCJpYXQiOjE3MDkxMjMzNDJ9.hnfTNztWqhOsRxIejeN9ja0tw3XqRuT-3H3-uITZ3MM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"discount\":70,\r\n    \"expiredAt\":\"3-30-2024\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/coupon/g6OHWw",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"coupon",
+								"g6OHWw"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete coupon",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlvc2VmbmFzcjE2NTIwMTZAZ21haWwuY29tIiwiaWQiOiI2NWI4NjdhMGQxYzgzNTZlZDVlNGI4ZWUiLCJpYXQiOjE3MDkxMjMzNDJ9.hnfTNztWqhOsRxIejeN9ja0tw3XqRuT-3H3-uITZ3MM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/coupon/g6OHWw",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"coupon",
+								"g6OHWw"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all coupons",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlvc2VmbmFzcjE2NTIwMTZAZ21haWwuY29tIiwiaWQiOiI2NWI4NjdhMGQxYzgzNTZlZDVlNGI4ZWUiLCJpYXQiOjE3MDkxMjMzNDJ9.hnfTNztWqhOsRxIejeN9ja0tw3XqRuT-3H3-uITZ3MM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/coupon/",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"coupon",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "create product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJld2FubmFzcmE0MTBAZ21haWwuY29tIiwiaWQiOiI2NWYwZmY4M2JhN2Y2YmQ2YmYxM2E3YjAiLCJpYXQiOjE3MTAyOTI5NTN9.soWXgFyf1GepIwM-xW9B72JpHfTBO5YCxhGgkzEe88U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "tshirt",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "good",
+									"type": "text"
+								},
+								{
+									"key": "availableItems",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "discount",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "65f10097ba7f6bd6bf13a7ba",
+									"type": "text"
+								},
+								{
+									"key": "subcategory",
+									"value": "65f10116ba7f6bd6bf13a7c0",
+									"type": "text"
+								},
+								{
+									"key": "brand",
+									"value": "65f1014eba7f6bd6bf13a7c6",
+									"type": "text"
+								},
+								{
+									"key": "defaultImage",
+									"type": "file",
+									"src": "/C:/Users/pc/Downloads/Default-Profile-Picture-PNG-Download-Image.png"
+								},
+								{
+									"key": "subImages",
+									"type": "file",
+									"src": [
+										"/C:/Users/pc/Downloads/Default-Profile-Picture-PNG-Download-Image.png",
+										"/C:/Users/pc/Downloads/wallpaperflare.com_wallpaper.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/product/",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inlvc2VmbmFzcjE2NTIwMTZAZ21haWwuY29tIiwiaWQiOiI2NWI4NjdhMGQxYzgzNTZlZDVlNGI4ZWUiLCJpYXQiOjE3MDkyMDg4MzR9.pYtQdQDrs1K513QnrEsQFjCzONNUwuEfBG-bHumejS8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/product/65e089d813d3596621ae0472",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"product",
+								"65e089d813d3596621ae0472"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/product?keyword=t&page=1&sort=-price",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"product"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "t"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": "-price"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "add to cart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJld2FubmFzcmE0MTBAZ21haWwuY29tIiwiaWQiOiI2NWYwZmY4M2JhN2Y2YmQ2YmYxM2E3YjAiLCJpYXQiOjE3MTAyOTI5NTN9.soWXgFyf1GepIwM-xW9B72JpHfTBO5YCxhGgkzEe88U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\":\"65f101dcba7f6bd6bf13a7d0\",\r\n    \"quantity\":5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/cart/",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"cart",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user cart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJld2FubmFzcmE0MTBAZ21haWwuY29tIiwiaWQiOiI2NWU4NDgyNzdlODFhNzMzMDA2OTM3ZmIiLCJpYXQiOjE3MDk3MjE5MDZ9.1JNd0qRD2YC5iEPq0WcoEYDJ8VOh4YpP17X8xRSgQiY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/cart/",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"cart",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user cart",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJld2FubmFzcmE0MTBAZ21haWwuY29tIiwiaWQiOiI2NWU4NDgyNzdlODFhNzMzMDA2OTM3ZmIiLCJpYXQiOjE3MDk3MjE5MDZ9.1JNd0qRD2YC5iEPq0WcoEYDJ8VOh4YpP17X8xRSgQiY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\":\"65e465cddfa3bac1f7e3ccdb\",\r\n    \"quantity\":8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/cart/",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"cart",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove product from cart",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJld2FubmFzcmE0MTBAZ21haWwuY29tIiwiaWQiOiI2NWU4NDgyNzdlODFhNzMzMDA2OTM3ZmIiLCJpYXQiOjE3MDk3MjE5MDZ9.1JNd0qRD2YC5iEPq0WcoEYDJ8VOh4YpP17X8xRSgQiY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/cart/65e46591dfa3bac1f7e3ccc9",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"cart",
+								"65e46591dfa3bac1f7e3ccc9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clear cart",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJld2FubmFzcmE0MTBAZ21haWwuY29tIiwiaWQiOiI2NWU4NDgyNzdlODFhNzMzMDA2OTM3ZmIiLCJpYXQiOjE3MDk3MjE5MDZ9.1JNd0qRD2YC5iEPq0WcoEYDJ8VOh4YpP17X8xRSgQiY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/cart/",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"cart",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "create order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJld2FubmFzcmE0MTBAZ21haWwuY29tIiwiaWQiOiI2NWYwZmY4M2JhN2Y2YmQ2YmYxM2E3YjAiLCJpYXQiOjE3MTAyOTI5NTN9.soWXgFyf1GepIwM-xW9B72JpHfTBO5YCxhGgkzEe88U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\":\"nasr city\",\r\n    \"phone\":\"01017626782\",\r\n    \"payment\":\"visa\",\r\n    \"coupon\":\"RPEUz0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/order/",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"order",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancel order",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJld2FubmFzcmE0MTBAZ21haWwuY29tIiwiaWQiOiI2NWU4NDgyNzdlODFhNzMzMDA2OTM3ZmIiLCJpYXQiOjE3MDk3MjE5MDZ9.1JNd0qRD2YC5iEPq0WcoEYDJ8VOh4YpP17X8xRSgQiY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/order/65ed9f1e6c141bc74f52d91d",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"order",
+								"65ed9f1e6c141bc74f52d91d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "review",
+			"item": [
+				{
+					"name": "add review",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJld2FubmFzcmE0MTBAZ21haWwuY29tIiwiaWQiOiI2NWU4NDgyNzdlODFhNzMzMDA2OTM3ZmIiLCJpYXQiOjE3MDk3MjE5MDZ9.1JNd0qRD2YC5iEPq0WcoEYDJ8VOh4YpP17X8xRSgQiY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\":\"love it\",\r\n    \"rating\":\"4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/product/65e465cddfa3bac1f7e3ccdb/review/",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"product",
+								"65e465cddfa3bac1f7e3ccdb",
+								"review",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update review",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJld2FubmFzcmE0MTBAZ21haWwuY29tIiwiaWQiOiI2NWU4NDgyNzdlODFhNzMzMDA2OTM3ZmIiLCJpYXQiOjE3MDk3MjE5MDZ9.1JNd0qRD2YC5iEPq0WcoEYDJ8VOh4YpP17X8xRSgQiY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\":\"love\",\r\n    \"rating\":\"5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://e-commerce-backend-umber.vercel.app/product/65e465cddfa3bac1f7e3ccdb/review/65edf22fe9827a7f8bf5ddc1",
+							"protocol": "https",
+							"host": [
+								"e-commerce-backend-umber",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"product",
+								"65e465cddfa3bac1f7e3ccdb",
+								"review",
+								"65edf22fe9827a7f8bf5ddc1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
